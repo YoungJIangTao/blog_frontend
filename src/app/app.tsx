@@ -9,19 +9,19 @@ export function App() {
       <Layout>
         <Layout.Header style={{ backgroundColor: "#fff" }}>
           <Menu mode="horizontal">
-            <Menu.Item>
+            <Menu.Item key={"home"}>
               <Link to="/home">首页</Link>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key={"blog"}>
               <Link to="/blog">博客</Link>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key={"archive"}>
               <Link to="/archive">归档</Link>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key={"links"}>
               <Link to="/links">友情链接</Link>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key={"admin"}>
               <Link to="/admin">后台</Link>
             </Menu.Item>
           </Menu>

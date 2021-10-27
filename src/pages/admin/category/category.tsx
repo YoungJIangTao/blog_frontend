@@ -4,14 +4,11 @@ import { Button, notification, Table, Tag, Tooltip } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import { useAntdTable } from "ahooks";
 
-import {
-  deleteFriendLinkById,
-  getAllFriendLinks,
-} from "../../../api/friend-link";
+import { deleteCategoryById, getAllCategories } from "../../../api/category";
 
-export function AdminLinks() {
+export function AdminCategory() {
   const refresh = useCallback(async () => {
-    const res = await getAllFriendLinks();
+    const res = await getAllCategories();
     return { total: res.data.length, list: res.data };
   }, []);
 
@@ -22,7 +19,7 @@ export function AdminLinks() {
   const { submit } = search;
 
   const deleteHandler = async (id: string) => {
-    const res = await deleteFriendLinkById({ id });
+    const res = await deleteCategoryById({ id });
     submit();
     notification.success({ message: res.message });
   };
@@ -37,11 +34,6 @@ export function AdminLinks() {
       title: "分类名称",
       dataIndex: "name",
       key: "name",
-    },
-    {
-      title: "链接",
-      dataIndex: "url",
-      key: "url",
     },
     {
       title: "发布时间",
