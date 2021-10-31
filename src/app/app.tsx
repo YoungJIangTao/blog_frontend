@@ -27,10 +27,12 @@ export function App() {
           </Menu>
         </Layout.Header>
         <Layout.Content>
-          <div>{renderRoutes(routes)}</div>
+          <div style={{ display: "block" }}>{renderRoutes(routes)}</div>
         </Layout.Content>
         <Layout.Footer>
-          <div style={{ textAlign: "center" }}>@Copyright</div>
+          <div style={{ textAlign: "center", display: "block" }}>
+            @Copyright
+          </div>
         </Layout.Footer>
       </Layout>
     </Router>

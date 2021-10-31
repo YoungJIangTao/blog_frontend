@@ -8,6 +8,7 @@ import {
   AdminCategory,
   AdminLinks,
 } from "../pages";
+import { BlogDetail } from "../pages/blog-detail";
 
 export const routes = [
   {
@@ -19,7 +20,14 @@ export const routes = [
   {
     key: "blog",
     path: "/blog",
+    exact: true,
     component: Blog,
+  },
+  {
+    key: "blog/detail",
+    exact: true,
+    path: "/blog/detail/:id",
+    component: BlogDetail,
   },
   {
     key: "archive",
