@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Modal, Form, Input } from "antd";
-import { getFriendLinkById } from "../../../api/friend-link";
+import { geCategoryById } from "../../../api/category";
 
-interface ILinkModal {
+interface ICategoryModal {
   visible: boolean;
   onCancel: (...p: any) => void;
   onModify: (...p: any) => void;
@@ -10,18 +10,18 @@ interface ILinkModal {
   id?: string | null;
 }
 
-export function LinkModal({
+export function CategoryModal({
   visible,
   onCancel,
   onModify,
   onAdd,
   id,
-}: ILinkModal) {
+}: ICategoryModal) {
   const [form] = Form.useForm();
 
   useEffect(() => {
     if (id !== null && id !== undefined) {
-      getFriendLinkById({ id }).then((res) => {
+      geCategoryById({ id }).then((res) => {
         console.log(res.data);
         form.setFieldsValue({
           ...res.data,
@@ -30,7 +30,6 @@ export function LinkModal({
     } else {
       form.setFieldsValue({
         id: undefined,
-        url: undefined,
         name: undefined,
         createAt: undefined,
       });
@@ -41,7 +40,7 @@ export function LinkModal({
     <Modal
       visible={visible}
       onCancel={onCancel}
-      title="友情链接"
+      title="博客分类"
       okText={"确定"}
       cancelText={"取消"}
       onOk={() => {
@@ -60,17 +59,9 @@ export function LinkModal({
           <Input />
         </Form.Item>
         <Form.Item
-          label="名称"
+          label="分类名称"
           name="name"
-          rules={[{ required: true, message: "请输入友情链接站点名称!" }]}
-        >
-          <Input />
-        </Form.Item>
-
-        <Form.Item
-          label="链接"
-          name="url"
-          rules={[{ required: true, message: "请输入地址!" }]}
+          rules={[{ required: true, message: "请输入分类名称!" }]}
         >
           <Input />
         </Form.Item>
