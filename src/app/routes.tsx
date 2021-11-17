@@ -3,6 +3,7 @@ import {
   Links,
   Blog,
   Archive,
+  Login,
   Admin,
   AdminBlog,
   AdminCategory,
@@ -38,6 +39,11 @@ export const routes = [
     key: "links",
     path: "/links",
     component: Links,
+  },
+  {
+    key: "login",
+    path: "/login",
+    component: Login,
   },
   {
     key: "admin",
