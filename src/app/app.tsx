@@ -69,7 +69,7 @@ export function App(props: any) {
               </Menu.Item>
               {user && (
                 <Menu.Item key={"admin"}>
-                  <Link to="/admin">后台</Link>
+                  <Link to="/admin/blog">后台</Link>
                 </Menu.Item>
               )}
             </Menu>
@@ -88,7 +88,7 @@ export function App(props: any) {
           </Space>
         </Layout.Header>
         <Layout.Content>
-          <div style={{ display: "block", minHeight: "90vh" }}>
+          <div style={{ display: "block", minHeight: "calc(100vh - 64px - 70px)" }}>
             {renderRoutes(routes)}
           </div>
         </Layout.Content>
