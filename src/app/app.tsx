@@ -45,7 +45,9 @@ export function App(props: any) {
     <Router>
       <Layout>
         <Layout.Header style={{ backgroundColor: "#fff" }}>
-          <Space>
+          <div style={{
+            display: 'flex'
+          }}>
             <div>
               <img
                 width="100%"
@@ -54,7 +56,7 @@ export function App(props: any) {
                 alt=""
               />
             </div>
-            <Menu mode="horizontal" style={{ width: "400px" }}>
+            <Menu mode="horizontal" style={{ width: "600px"}}>
               <Menu.Item key={"home"}>
                 <Link to="/home">首页</Link>
               </Menu.Item>
@@ -63,9 +65,6 @@ export function App(props: any) {
               </Menu.Item>
               <Menu.Item key={"archive"}>
                 <Link to="/archive">归档</Link>
-              </Menu.Item>
-              <Menu.Item key={"links"}>
-                <Link to="/links">友情链接</Link>
               </Menu.Item>
               {user && (
                 <Menu.Item key={"admin"}>
@@ -85,7 +84,7 @@ export function App(props: any) {
                 />
               </Dropdown>
             </div>
-          </Space>
+          </div>
         </Layout.Header>
         <Layout.Content>
           <div style={{ display: "block", minHeight: "calc(100vh - 64px - 70px)" }}>

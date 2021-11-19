@@ -19,7 +19,10 @@ export function Admin({ route, children }: any) {
         </Menu>
       </Layout.Sider>
       <Layout.Content style={{ padding: 12 }}>
-        {renderRoutes(route.routes)}
+        <div style={{minHeight:'calc(100vh - 64px -70px)'}}>
+          {renderRoutes(route.routes)}
+        </div>
+
       </Layout.Content>
     </Layout>
   );

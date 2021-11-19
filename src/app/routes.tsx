@@ -36,11 +36,6 @@ export const routes = [
     component: Archive,
   },
   {
-    key: "links",
-    path: "/links",
-    component: Links,
-  },
-  {
     key: "login",
     path: "/login",
     component: Login,

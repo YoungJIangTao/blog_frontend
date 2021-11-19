@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/charts": "^1.2.14",
     "@syllepsis/access-react": "^0.1.0",
     "@syllepsis/plugin-code-block": "^0.1.0",
     "@syllepsis/plugin-table": "^0.1.0",
