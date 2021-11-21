@@ -10,20 +10,24 @@ const { TabPane } = Tabs;
 export function AdminBlog() {
   const [editor, setEditor] = useState<SylApi | undefined>();
   const [activeKey, setActiveKey] = useState<string>("list");
+  const [editorName, setEditorName] = useState<string>("新增文章");
+  const [articleId, setArticleId] = useState<any>(null);
 
   return (
     <Tabs
       activeKey={activeKey}
       onChange={(key) => {
         setActiveKey(key);
+        setEditorName("新增文章");
+        setArticleId(null);
       }}
       type="card"
     >
       <TabPane tab="列表" key="list">
-        <List />
+        <List {...{ setArticleId, activeKey, setActiveKey, setEditorName }} />
       </TabPane>
-      <TabPane tab="新增文章" key="editor">
-        <Editor {...{ editor, setEditor }} />
+      <TabPane tab={editorName} key="editor">
+        <Editor {...{ editor, setEditor, articleId }} />
       </TabPane>
     </Tabs>
   );

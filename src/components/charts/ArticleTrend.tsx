@@ -22,9 +22,9 @@ const ArticleTrend: React.FC = () => {
                     value: value
                 })
             })
-            setData(tempData);
+            setData(tempData.reverse());
         })
-    })
+    },[])
     const config = {
         data,
         height: 360,

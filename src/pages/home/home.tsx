@@ -19,8 +19,11 @@ export function Home() {
       setLinks(res.data)
     });
 
+
+  }, []);
+
+  useEffect(() => {
     getAllArticles().then(res => {
-      console.log(res)
       setArticles(res.data.reverse().slice(0, 4))
     })
   }, [])

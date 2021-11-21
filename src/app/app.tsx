@@ -1,7 +1,7 @@
 import { HashRouter as Router, Link } from "react-router-dom";
 import { renderRoutes } from "react-router-config";
 import { routes } from "./routes";
-import { Layout, Menu, Dropdown, Space, Avatar, notification } from "antd";
+import { Layout, Menu, Dropdown, Avatar, notification } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { logout } from "../api/login";
 import { GlobalContext } from "../modal/global-context";
