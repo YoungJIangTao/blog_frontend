@@ -1,1 +1,1 @@
-export const baseUrl: string = "http://youngwind.top/blog";
+export const baseUrl: string = "http://localhots:8080/blog";

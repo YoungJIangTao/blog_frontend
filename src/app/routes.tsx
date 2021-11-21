@@ -1,6 +1,5 @@
 import {
   Home,
-  Links,
   Blog,
   Archive,
   Login,
@@ -8,6 +7,8 @@ import {
   AdminBlog,
   AdminCategory,
   AdminLinks,
+  AdminUser,
+  AdminOverview
 } from "../pages";
 import { BlogDetail } from "../pages/blog-detail";
 
@@ -36,11 +37,6 @@ export const routes = [
     component: Archive,
   },
   {
-    key: "links",
-    path: "/links",
-    component: Links,
-  },
-  {
     key: "login",
     path: "/login",
     component: Login,
@@ -50,6 +46,11 @@ export const routes = [
     path: "/admin",
     component: Admin,
     routes: [
+      {
+        key: "admin/overview",
+        path: "/admin/overview",
+        component: AdminOverview,
+      },
       {
         key: "admin/blog",
         path: "/admin/blog",
@@ -64,6 +65,11 @@ export const routes = [
         key: "admin/links",
         path: "/admin/links",
         component: AdminLinks,
+      },
+      {
+        key: "admin/user",
+        path: "/admin/user",
+        component: AdminUser,
       },
     ],
   },
